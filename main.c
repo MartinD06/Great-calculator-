@@ -87,7 +87,7 @@ int main(void)
     printf("  КАЛКУЛАТОР НА ОЦЕНКИ / GRADE CALCULATOR  \n");
     printf("===========================================\n\n");
 
-    // СТЪПКА 1: Въвеждане на домашни работи
+    // Въвеждане на домашни работи
     int num_assignments = get_positive_number("Колко домашни работи имате? ");
     float max_assignment_points = get_positive_number("Колко точки е всяка домашна работа? ");
     float assignments[num_assignments]; // Масив за точките от домашни
@@ -100,7 +100,7 @@ int main(void)
         assignments[i] = get_score(prompt, max_assignment_points);
     }
 
-    // СТЪПКА 2: Въвеждане на тестове
+    // Въвеждане на тестове
     int num_tests = get_positive_number("\nКолко теста имате? ");
     float max_test_points = get_positive_number("Колко точки е всеки тест? ");
     float tests[num_tests]; // Масив за точките от тестове
@@ -113,7 +113,7 @@ int main(void)
         tests[i] = get_score(prompt, max_test_points);
     }
 
-    // СТЪПКА 3: Въвеждане на тегла (важност на домашни и тестове)
+    // Въвеждане на тегла (важност на домашни и тестове)
     printf("\n--- ТЕГЛА (WEIGHTS) ---\n");
     float assignment_weight = get_positive_number("Каква част от оценката са домашните (0-100)? ");
     float test_weight = get_positive_number("Каква част от оценката са тестовете (0-100)? ");
@@ -126,7 +126,7 @@ int main(void)
                assignment_weight, test_weight, assignment_weight + test_weight);
     }
 
-    // СТЪПКА 4: Изчисления
+    // Изчисления
     float total_assignment_points = calculate_sum(assignments, num_assignments);
     float total_test_points = calculate_sum(tests, num_tests);
     float max_total_assignments = num_assignments * max_assignment_points;
@@ -147,7 +147,7 @@ int main(void)
     float final_percentage = (assignment_percentage * assignment_weight / 100) +
                              (test_percentage * test_weight / 100);
 
-    // СТЪПКА 5: Показване на крайния резултат
+    // Показване на крайния резултат
     printf("\n===========================================\n");
     printf("           КРАЙНИ РЕЗУЛТАТИ\n");
     printf("===========================================\n");
